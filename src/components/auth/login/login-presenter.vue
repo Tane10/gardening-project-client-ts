@@ -36,7 +36,9 @@
         </v-col>
 
         <v-col cols="12" md="4">
-          <v-btn color="warning" class="mr-4" @click="this.clear"> Clear </v-btn>
+          <v-btn color="warning" class="mr-4" @click="this.clear">
+            Clear
+          </v-btn>
         </v-col>
       </v-row>
     </v-container>
@@ -56,8 +58,8 @@ export default class LoginPresenter extends Vue {
   }
 
   private clear(): void {
-      this.username = "";
-      this.password = "";
+    this.username = "";
+    this.password = "";
   }
 }
 </script>
