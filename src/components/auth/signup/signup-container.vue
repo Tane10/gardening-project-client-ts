@@ -1,6 +1,6 @@
 <template>
   <div class="signup">
-    <signup-presenter @signup="signup"/>
+    <signup-presenter @signup="signup" />
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default class SignupContiner extends Vue {
   private authService = new AuthService();
 
   public signup(payload: IUser): void {
-      console.log(payload)
+    console.log(payload);
     this.authService.sign(payload);
   }
 }

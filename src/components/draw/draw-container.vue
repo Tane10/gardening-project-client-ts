@@ -1,12 +1,12 @@
 <template>
-  <draw-presenter />
+  <canvas-container />
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import DrawPresenter from "./draw-presenter.vue";
+import CanvasContainer from "./canvas/canvas-container.vue";
 
-@Component({ components: { DrawPresenter } })
+@Component({ components: { CanvasContainer } })
 export default class DrawContainer extends Vue {}
 </script>
 <style scoped lang="scss"></style>

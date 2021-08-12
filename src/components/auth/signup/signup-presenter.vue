@@ -93,8 +93,8 @@ import { IUser } from "../../../model";
 
 @Component({})
 export default class SignupPresenter extends Vue {
-  public userTypes = ["user","admin","demo"]
-  public userType = ""
+  public userTypes = ["user", "admin", "demo"];
+  public userType = "";
   public userDetails: IUser = {
     username: "",
     password: "",
@@ -102,17 +102,15 @@ export default class SignupPresenter extends Vue {
     type: "",
   };
 
-    private signup(): void {
-        // this.userDetails.type = this.userType;
-        this.$emit("signup", this.userDetails)
-        
-    }
-    
-    
-    private clear(): void {
-      this.userDetails =  { username: "", password: "", email: "", type: "", };
-      this.userType = "";
-    }
+  private signup(): void {
+    // this.userDetails.type = this.userType;
+    this.$emit("signup", this.userDetails);
+  }
+
+  private clear(): void {
+    this.userDetails = { username: "", password: "", email: "", type: "" };
+    this.userType = "";
+  }
 }
 </script>
 <style scoped lang="scss"></style>

@@ -33,11 +33,14 @@ export class AuthService {
 
   public async sign(userDetails: IUser): Promise<boolean> {
     const { username, password, email, type, fullname } = userDetails;
-    console.log(username)
+    console.log(username);
     return new Promise((resolve, reject) => {
       axios
-        .post(`${this.baseUrl}/signup`,
-         { username, password, email, type, fullname }, this.httpConfig)
+        .post(
+          `${this.baseUrl}/signup`,
+          { username, password, email, type, fullname },
+          this.httpConfig
+        )
         .then((res) => {
           res.status == 200 ? resolve(true) : reject(res.data);
         })
