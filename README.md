@@ -1,5 +1,9 @@
 # client
 
+## brief
+This is a very small start of a side project where i was testing out vue + P5 to create a drawing tool. This was written over a 4hrs during my lunch breaks.
+ 
+
 ## Project setup
 ```
 npm install
