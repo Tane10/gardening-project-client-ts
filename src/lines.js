@@ -1,10 +1,5 @@
-import P5 from "p5";
-import { Service } from "typedi";
-
-@Service()
-export default class Lines {
-  #colour;
-  #p5;
+class Lines {
+  colour;
   px;
   py;
   x;
@@ -12,16 +7,14 @@ export default class Lines {
   strokeWeight;
 
   constructor(
-    p5,
     colour,
+    strokeWeight,
     pwinMouseX,
     pwinMouseY,
     winMouseX,
-    winMouseY,
-    strokeWeight
+    winMouseY
   ) {
     this.colour = colour;
-    this.p5 = p5;
     this.px = pwinMouseX;
     this.py = pwinMouseY;
     this.x = winMouseX;
@@ -30,9 +23,7 @@ export default class Lines {
   }
 
   show() {
-    const p5 = this.p5;
-
-    p5.stroke(this.colour).strokeWeight(this.strokeWeight);
-    p5.line(this.px, this.py, this.x, this.y);
+    stroke(this.colour).strokeWeight(this.strokeWeight);
+    line(this.px, this.py, this.x, this.y);
   }
 }
