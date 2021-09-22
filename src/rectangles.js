@@ -21,6 +21,7 @@ class RectangleClass {
 
   show() {
     stroke(this.colour).strokeWeight(this.strokeWeight);
+    noFill()
     rect(this.postionX, this.postionY, this.rectWidth, this.rectLength);
   }
 }

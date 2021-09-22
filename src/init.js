@@ -1,5 +1,5 @@
 class Init {
-  pickerColor;
+  lineColor;
   lineStrokeWeight;
   pwinMouseX;
   pwinMouseY;
@@ -12,7 +12,7 @@ class Init {
   rectangleInstance;
 
   constructor(
-    pickerColor,
+    lineColor,
     lineStrokeWeight,
     pwinMouseX,
     pwinMouseY,
@@ -21,7 +21,7 @@ class Init {
     mouseX,
     mouseY
   ) {
-    this.pickerColor = pickerColor;
+    this.lineColor = lineColor;
     this.lineStrokeWeight = lineStrokeWeight;
     this.pwinMouseX = pwinMouseX;
     this.pwinMouseY = pwinMouseY;
@@ -33,7 +33,7 @@ class Init {
 
   createShapeInstances() {
      this.lineInstance = new LinesClass(
-      pickerColor,
+      lineColor,
       lineStrokeWeight,
       pwinMouseX,
       pwinMouseY,
@@ -42,7 +42,7 @@ class Init {
     );
 
     this.rectangleInstance = new RectangleClass(
-      pickerColor,
+      lineColor,
       lineStrokeWeight,
       mouseX,
       mouseY

@@ -3,8 +3,12 @@ function setup() {
   background(220);
   strokeSlider = createSlider(0, 10, 1);
   strokeSlider.position(1000, 400);
-  colorPicker = createColorPicker("#ed225d");
-  colorPicker.position(1000, 450);
+
+  lineColorPicker = createColorPicker("#ed225d");
+  lineColorPicker.position(1000, 450);
+
+  fillColorPicker = createColorPicker("white");
+  fillColorPicker.position(1050, 450);
 
   toolBar = new ToolBar();
   toolBar.layout();
@@ -12,13 +16,13 @@ function setup() {
 
 function draw() {
   // color picker
-  pickerColor = colorPicker.value().toString();
+  lineColor = lineColorPicker.value().toString();
 
   //line weight
   lineStrokeWeight = parseInt(strokeSlider.value().toString());
 
   initializer = new Init(
-    pickerColor,
+    lineColor,
     lineStrokeWeight,
     pwinMouseX,
     pwinMouseY,
@@ -39,6 +43,8 @@ function mousePressed() {
   // drawing
   toolBar.drawRectangle(initializer.rectangleInstance);
   toolBar.drawLine(initializer.lineInstance);
+
+  // return false;
 }
 
 function mouseDragged() {

@@ -1,15 +1,17 @@
 class ToolBar {
   container;
   buttonGroup;
+
   lineButton;
   rectangleButton;
+  fillButton;
+  selectButton;
 
   strokeColor;
   strokeWeight;
 
   selectedButton = 0;
-  constructor() {
-  }
+  constructor() {}
 
   layout() {
     // toolbar div
@@ -31,6 +33,12 @@ class ToolBar {
     this.rectangleButton = createButton("Rectangle");
     this.rectangleButton.id("rectangle_btn");
     this.rectangleButton.value(1);
+
+    // fill
+    this.fillButton = createButton("Fill / No Fill");
+    this.fillButton.id("fill_btn");
+    this.fillButton.value(false);
+    
   }
 
   setRectangle() {
@@ -56,8 +64,16 @@ class ToolBar {
   drawLine(lineInstance) {
     if (this.selectedButton == 0) {
       lineInstance.show();
+    }
   }
-}
+
+  fillShape(color) {
+    this.fillButton.mousePressed(() => {
+      if(this.fillButton.value){
+        fill(color)
+      }
+    });
+  }
 }
 
 // TODO: make it more simple with rect click to make rect at x postions and then add
