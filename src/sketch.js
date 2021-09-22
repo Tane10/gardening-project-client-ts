@@ -49,6 +49,9 @@ function mousePressed() {
 
 function mouseDragged() {
   toolBar.drawLine(initializer.lineInstance);
+  toolBar.drawCustomRectangle(initializer.rectangleInstance);
+
+  console.log(mouseX);
 
   // click for rect set start point hide the inbertween
   // render final rect once mousse dragg hase stoped
@@ -58,5 +61,6 @@ function mouseDragged() {
 }
 
 function mouseReleased() {
+  // loop();
   // toolBar.restValues();
 }

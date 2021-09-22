@@ -38,7 +38,6 @@ class ToolBar {
     this.fillButton = createButton("Fill / No Fill");
     this.fillButton.id("fill_btn");
     this.fillButton.value(false);
-    
   }
 
   setRectangle() {
@@ -69,10 +68,14 @@ class ToolBar {
 
   fillShape(color) {
     this.fillButton.mousePressed(() => {
-      if(this.fillButton.value){
-        fill(color)
+      if (this.fillButton.value) {
+        fill(color);
       }
     });
+  }
+
+  drawCustomRectangle(rectangleInstance) {
+    rectangleInstance.drawCustomRectangle();
   }
 }
 
