@@ -6,8 +6,8 @@ function setup() {
   colorPicker = createColorPicker("#ed225d");
   colorPicker.position(1000, 450);
 
-  toolbar = new ToolBar(pwinMouseX, pwinMouseY, winMouseX, winMouseY);
-  toolbar.layout();
+  toolBar = new ToolBar();
+  toolBar.layout();
 }
 
 function draw() {
@@ -17,28 +17,40 @@ function draw() {
   //line weight
   lineStrokeWeight = parseInt(strokeSlider.value().toString());
 
-  //   let line = new Lines(
-  //     pickerColor,
-  //     lineStrokeWeight,
-  //     pwinMouseX,
-  //     pwinMouseY,
-  //     winMouseX,
-  //     winMouseY
-  //   );
+  initializer = new Init(
+    pickerColor,
+    lineStrokeWeight,
+    pwinMouseX,
+    pwinMouseY,
+    winMouseX,
+    winMouseY,
+    mouseX,
+    mouseY
+  );
+
+  initializer.createShapeInstances();
 }
 
 function mousePressed() {
-  toolbar.setRectangle();
+  // toolBar button clicks
+  toolBar.setRectangle();
+  toolBar.setLine();
+
+  // drawing
+  toolBar.drawRectangle(initializer.rectangleInstance);
+  toolBar.drawLine(initializer.lineInstance);
 }
 
 function mouseDragged() {
+  toolBar.drawLine(initializer.lineInstance);
+
   // click for rect set start point hide the inbertween
   // render final rect once mousse dragg hase stoped
-  toolbar.drawRectangle();
+  // toolBar.drawRectangle();
   // prevent default
   return false;
 }
 
 function mouseReleased() {
-  toolbar.restValues();
+  // toolBar.restValues();
 }

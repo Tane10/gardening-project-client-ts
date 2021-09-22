@@ -3,19 +3,12 @@ class ToolBar {
   buttonGroup;
   lineButton;
   rectangleButton;
-  px;
-  py;
-  x;
-  y;
-  selectedButton = 3;
-  rectWidth = 0;
-  rectLength = 0;
 
-  constructor(pwinMouseX, pwinMouseY, winMouseX, winMouseY) {
-    this.px = pwinMouseX;
-    this.py = pwinMouseY;
-    this.x = winMouseX;
-    this.y = winMouseY;
+  strokeColor;
+  strokeWeight;
+
+  selectedButton = 0;
+  constructor() {
   }
 
   layout() {
@@ -46,18 +39,25 @@ class ToolBar {
     });
   }
 
-  drawRectangle() {
+  setLine() {
+    this.lineButton.mousePressed(() => {
+      this.selectedButton = this.lineButton.value();
+    });
+  }
+
+  drawRectangle(rectangleInstance) {
     if (this.selectedButton == 1) {
-      this.rectWidth = this.rectWidth + 5;
-      this.rectLength = this.rectLength + 5;
-      rect(this.px, this.py, this.rectWidth, this.rectLength).updaye;
+      if (mouseX !== 0 && mouseY !== 0) {
+        rectangleInstance.show();
+      }
     }
   }
 
-  restValues() {
-    this.rectWidth = 0;
-    this.rectLength = 0;
+  drawLine(lineInstance) {
+    if (this.selectedButton == 0) {
+      lineInstance.show();
   }
+}
 }
 
 // TODO: make it more simple with rect click to make rect at x postions and then add

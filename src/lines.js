@@ -1,4 +1,4 @@
-class Lines {
+class LinesClass {
   colour;
   px;
   py;
